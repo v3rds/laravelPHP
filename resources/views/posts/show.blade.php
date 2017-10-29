@@ -11,4 +11,17 @@
 
 	<p>{{ $post->body }}</p>
 
+	<hr>
+
+	<ul>
+	@foreach ($post->comments as $comment)
+		<li>
+			<strong>
+				{{ $comment->created_at->diffForHumans() }}:
+			</strong>
+			{{ $comment->body }}
+		</li>
+	@endforeach
+	</ul>
+
 @endsection
