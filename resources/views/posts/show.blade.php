@@ -11,8 +11,7 @@
 
 	<p>{{ $post->body }}</p>
 
-	<hr>
-
+<!-- Show Comments --><hr>
 	<ul>
 	@foreach ($post->comments as $comment)
 		<li>
@@ -24,4 +23,14 @@
 	@endforeach
 	</ul>
 
+<!-- Add Comments --><hr>
+	<form method="POST" action="/posts/{{ $post->id }}/comments">
+		{{ csrf_field() }}
+		<textarea name="body" placeholder="Your Comments here"></textarea>
+		<br>
+		<button type="submit">Publish</button>
+	
+		@include('layouts.errors')
+
+	</form>
 @endsection
