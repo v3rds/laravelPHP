@@ -12,6 +12,7 @@
 	<p>{{ $post->body }}</p>
 
 <!-- Show Comments --><hr>
+	<u>Comments:</u>
 	<ul>
 	@foreach ($post->comments as $comment)
 		<li>
